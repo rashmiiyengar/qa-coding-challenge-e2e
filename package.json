@@ -1,0 +1,24 @@
+{
+  "name": "betterhelpsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "questionare": "npx playwright test",
+    "clean:allure": "rm -rf allure-results allure-report",
+    "generate:allure": "allure generate allure-results -o allure-report",
+    "test:allure": "npm run clean:allure && npm run questionare || true  && allure generate allure-results --clean && allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.0",
+    "allure-commandline": "^2.34.0",
+    "allure-playwright": "^3.2.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
